@@ -1,4 +1,4 @@
-import  User  from "../model/user.js";
+import  User  from "../model/User.js";
 export const saveUserDetails = async (req, res) => {
   try {
     const { firebaseUid, name, email, contact, address, role } = req.body;
@@ -20,19 +20,6 @@ export const saveUserDetails = async (req, res) => {
   }
 };
 
-
-{/*export const getUserProfile = async (req, res) => {
-    try {
-      const { firebaseUid } = req.user; // Extracted from token
-  
-      const user = await User.findOne({ firebaseUid }).select("-_id -__v");
-      if (!user) return res.status(404).json({ message: "User not found" });
-  
-      return res.status(200).json(user);
-    } catch (error) {
-      return res.status(500).json({ message: error.message });
-    }
-  }; */}
 
   export const getUserProfile = async (req, res) => {
     try {
